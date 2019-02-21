@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.nuxeo.devtraining.nuxeo-training-core.test
+Bundle-Name: Nuxeo Dev Training Tests Tests

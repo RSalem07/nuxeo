@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+  ~ (C) Copyright 2019 Nuxeo (http://nuxeo.com/) and others.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  ~ Contributors:
+  ~     Salem Aouana
+  -->
+
+<component name="org.nuxeo.devtraining.services.ProductService.Contributions" version="1.0">
+    <documentation>
+        Contributions to differents components that allow :
+        - Image documents will be automatically tagged as Visual Document.
+        - Adding extensions to compute price by product country.
+    </documentation>
+
+    <require>org.nuxeo.ecm.platform.filemanager.service.FileManagerService</require>
+    <extension point="plugins" target="org.nuxeo.ecm.platform.filemanager.service.FileManagerService">
+        <plugin class="org.nuxeo.ecm.platform.picture.extension.ImagePlugin" name="Imageplugin" order="10"
+                docType="visual">
+            <filter>image/jpeg</filter>
+            <filter>image/jpeg</filter>
+            <filter>image/gif</filter>
+            <filter>image/png</filter>
+            <filter>image/tiff</filter>
+        </plugin>
+    </extension>
+    <require>org.nuxeo.devtraining.services.ProductService</require>
+    <extension point="plugins" target="org.nuxeo.devtraining.services.ProductService">
+        <plugin class="org.nuxeo.devtraining.extensions.ItalyProductCompute" origin="italy">
+        </plugin>
+    </extension>
+</component>

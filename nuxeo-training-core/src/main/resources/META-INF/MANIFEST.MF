@@ -1,0 +1,14 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: org.nuxeo.devtraining
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-training-core
+Bundle-ManifestVersion: 2
+Nuxeo-WebModule: org.nuxeo.devtraining.webengin.ProductApplication;name=productApplicationRoot
+Bundle-SymbolicName: org.nuxeo.devtraining.nuxeo-training-core;singleton=true
+Nuxeo-Component: OSGI-INF/product-services.xml,
+ OSGI-INF/product-operations.xml,
+ OSGI-INF/product-contribs-adapters.xml,
+ OSGI-INF/product-contribs.xml,
+ OSGI-INF/product-events-listeners.xml
